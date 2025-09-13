@@ -1,0 +1,4 @@
+requests
+python-telegram-bot==13.15  # For Telegram (older stable version for simplicity)
+pandas
+pandas_ta  # For indicators (pure Python, easy)
