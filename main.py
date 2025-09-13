@@ -10,13 +10,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 def start(update, context):
     """Start command handler."""
-    update.message.reply_text('Simple Trading Bot ready! Use /signal for a trade signal.')
+    update.message.reply_text('Simple Trading Bot ready! Use /signal for trade signals on multiple pairs.')
 
 def signal_command(update, context):
     """Signal command handler."""
-    df = signal_generator.fetch_data()
-    signal = signal_generator.generate_signal(df)
-    update.message.reply_text(signal)
+    signals = signal_generator.generate_signals()
+    update.message.reply_text(signals)
 
 def main():
     """Run the bot."""
